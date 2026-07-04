@@ -1,4 +1,6 @@
-Cài adguard home trên tv box cũ điện thoại cũ !
+# Cài adguard home trên tv box cũ điện thoại cũ !
+# Cài adguard home lên termux
+# install adguard home on termux
 Có thể tự chạy khi khởi đông lại !
     +Có app termux
      +LƯU Ý MÁY PHẢI ROOT NHÉ 
@@ -21,8 +23,7 @@ pkg install wget && pkg install tsu && wget https://github.com/AdguardTeam/AdGua
  +Điền vào file start-sshd:
 
 #!/data/data/com.termux/files/usr/bin/sh
-termux-wake-lock && sshd
-cd AdGuardHome && rm -f adguardhome.log && su -c './AdGuardHome 2>&1 | tee adguardhome.log'
+termux-wake-lock && sshd & cd AdGuardHome && rm -f adguardhome.log && su -c './AdGuardHome 2>&1 | tee adguardhome.log'
 
 +Điền xong :
 Ctr +o rồi enter để lưu
