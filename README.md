@@ -4,7 +4,7 @@
 # install adguard home on termux
 
 Chào bạn, đây là một hướng dẫn rất hữu ích để tận dụng điện thoại hoặc TV Box cũ làm bộ lọc quảng cáo (DNS Server) cho cả gia đình.
-Ở đây mình cài trên kiwi box s1 cpu allwinner h2+ ram 1gb đã up fw adnroid 7.1 đã root sẵn 
+Ở đây mình cài trên kiwi box s1 cpu allwinner h2+ ram 1gb đã up fw adnroid 7.1 đã root sẵn.
 Để giúp các bạn mới bắt đầu dễ dàng làm theo mà không bị lỗi, mình đã tối ưu, sửa một số lỗi nhỏ trong đoạn code của bạn (như lệnh `chmod` viết hoa, sai đường dẫn khi khởi động) và trình bày lại thật sạch sẽ, rõ ràng từng bước dưới đây.
 
 ---
