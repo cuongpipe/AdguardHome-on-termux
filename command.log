@@ -25,7 +25,7 @@ pkg update ca-certificates -y
 su -c 'SSL_CERT_FILE=/data/data/com.termux/files/usr/etc/tls/cert.pem ./AdGuardHome 2>&1'
 
 
-ép đổi ngày giờ 
+# ép đổi ngày giờ 
 su -c date 070421551900
 
 // file termux boot start-sshd
@@ -33,3 +33,11 @@ su -c date 070421551900
 #!/data/data/com.termux/files/usr/bin/sh
 termux-wake-lock && sshd && cd AdGuardHome && su -c 'SSL_CERT_FILE=/data/data/com.termux/files/home/AdGuardHome/cacert.pem ./AdGuardHome 2>&1' &
 su -c settings put global auto_time 0 && sleep 1 && su -c settings put global auto_time 1 && wget https://curl.se/ca/cacert.pem
+
+
+# Tắt tính năng check Internet ngầm của Android, giúp box yếu không bị dồn ứ request gây khựng và rớt gói.
+su
+settings put global captive_portal_mode 0
+
+
+
