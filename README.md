@@ -95,13 +95,16 @@ nano ~/.termux/boot/start-adguard
 3. Copy toàn bộ đoạn code dưới đây và dán vào màn hình Termux:
 ```bash
 #!/data/data/com.termux/files/usr/bin/sh
-# Giữ cho Termux không bị ngủ khi tắt màn hình
-termux-wake-lock
 
-# Chạy AdGuard Home bằng quyền Root dưới nền
-cd /data/data/com.termux/files/home/AdGuardHome
-rm -f adguardhome.log
-su -c './AdGuardHome > adguardhome.log 2>&1' &
+# wake termux and sshd
+termux-wake-lock && sshd
+
+# AdGuardHome 
+cd AdGuardHome
+su -c 'SSL_CERT_FILE=/data/data/com.termux/files/home/AdGuardHome/cacert.pem ./AdGuardHome 2>&1' &
+
+# Update cacert.pem after boot
+( sleep 300 && wget -q -O cacert.pem.tmp https://curl.se/ca/cacert.pem && mv cacert.pem.tmp cacert.pem ) &
 
 ```
 
